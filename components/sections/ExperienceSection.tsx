@@ -8,6 +8,8 @@ import { MapPin } from 'lucide-react';
 import { motion } from "framer-motion";
 
 export function ExperienceSection({ id }: { id?: string })  {
+
+  //this is for testing
   const { data: experiences = [], isLoading } = useGetExperienceQuery();
 
   if (isLoading) return (
