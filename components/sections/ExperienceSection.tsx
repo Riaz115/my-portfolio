@@ -10,7 +10,11 @@ import { motion } from "framer-motion";
 export function ExperienceSection({ id }: { id?: string })  {
   const { data: experiences = [], isLoading } = useGetExperienceQuery();
 
-  if (isLoading) return <PageLoader />;
+  if (isLoading) return (
+    <section className="min-h-[80vh] flex items-center justify-center bg-muted/20" id={id}>
+      <PageLoader />
+    </section>
+  );
 
   return (
     <motion.section

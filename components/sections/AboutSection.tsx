@@ -9,7 +9,11 @@ export function AboutSection({ id }: { id?: string }) {
   const { data: aboutData, isLoading } = useGetAboutQuery();
 
 
-  if (isLoading) return <PageLoader />;
+  if (isLoading) return (
+    <section className="min-h-[80vh] flex items-center justify-center bg-muted/20" id={id}>
+      <PageLoader />
+    </section>
+  );
 
   
 

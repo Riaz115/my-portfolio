@@ -33,7 +33,11 @@ const SkillBar = ({ percent }: { percent: number }) => {
 export function SkillsSection({ id }: { id?: string }){
   const { data: skills = [], isLoading } = useGetSkillsQuery();
 
-  if (isLoading) return <PageLoader />;
+  if (isLoading) return (
+    <section className="min-h-[80vh] flex items-center justify-center bg-muted/20" id={id}>
+      <PageLoader />
+    </section>
+  );
 
   const categories = [
     'frontend', 'frontend-libraries', 'backend', 'database', 'tools', 'deployment', 'designing', 'social-media-marketing'

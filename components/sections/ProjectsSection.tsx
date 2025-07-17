@@ -185,7 +185,11 @@ export function ProjectsSection() {
     setPage(prev => prev + 1);
   };
 
-  if (isLoading && projects.length === 0) return <PageLoader />;
+  if (isLoading) return (
+    <section className="min-h-[80vh] flex items-center justify-center bg-muted/20" id="projects">
+      <PageLoader />
+    </section>
+  );
   return (
     <section id="projects" className="py-10 bg-muted/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

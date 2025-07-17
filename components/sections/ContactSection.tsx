@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import { Github, Linkedin, Facebook, YoutubeIcon } from 'lucide-react';
 import { motion } from "framer-motion";
+import { PageLoader } from '@/components/ui/loader';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -71,6 +72,12 @@ export function ContactSection({ id }: { id?: string }) {
       toast.error('Failed to send message. Please try again.');
     }
   };
+
+  if (isLoading) return (
+    <section className="min-h-[80vh] flex items-center justify-center bg-muted/20" id={id}>
+      <PageLoader />
+    </section>
+  );
 
   return (
     <motion.section
