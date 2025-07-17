@@ -5,7 +5,7 @@ import { PageLoader } from '@/components/ui/loader';
 import { useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 
-export function AboutSection() {
+export function AboutSection({ id }: { id?: string }) {
   const { data: aboutData, isLoading } = useGetAboutQuery();
 
 
@@ -22,6 +22,7 @@ export function AboutSection() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
       className="pt-10 pb-20 bg-muted/20"
+      id={id}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

@@ -14,7 +14,7 @@ const skillSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['frontend', 'frontend-libraries', 'backend', 'database', 'tools', 'deployment'],
+    enum: ['frontend', 'frontend-libraries', 'backend', 'database', 'tools', 'deployment', 'designing', 'social-media-marketing'],
   },
   icon: {
     type: String,

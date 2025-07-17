@@ -25,7 +25,7 @@ const contactSchema = z.object({
 
 type ContactForm = z.infer<typeof contactSchema>;
 
-export function ContactSection() {
+export function ContactSection({ id }: { id?: string }) {
   const [createContact, { isLoading }] = useCreateContactMutation();
   const { data: settings } = useGetWebsiteSettingsQuery();
   const { user, isAuthenticated } = useSelector((state: RootState) => state.auth);
@@ -79,6 +79,7 @@ export function ContactSection() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
       className="pb-20 pt-10 bg-white dark:bg-[#0f172a] transition-colors duration-300"
+      id={id}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Gradient Heading */}

@@ -5,7 +5,7 @@ import { useGetHomeDataQuery } from '@/store/api/apiSlice';
 import { toast } from 'react-toastify';
 import { motion } from "framer-motion";
 
-export function HeroSection() {
+export function HeroSection({ id }: { id?: string }) {
   const { data: homeData, isLoading } = useGetHomeDataQuery();
   const data = homeData || {
     name: 'John Doe',
@@ -47,6 +47,7 @@ export function HeroSection() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
+      id={id}
       className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/20 pt-20 pb-10"
     >
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row gap-12 items-center">

@@ -69,6 +69,8 @@ export default function SkillsPage() {
     "database",
     "tools",
     "deployment",
+    "designing",
+    "social-media-marketing",
   ];
 
   const handleInputChange = (field: string, value: string | number) => {

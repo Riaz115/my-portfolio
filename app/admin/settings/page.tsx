@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,7 +56,7 @@ export default function SettingsPage() {
   });
 
   // Initialize form data when settings loads
-  useState(() => {
+  useEffect(() => {
     if (settings) {
       setFormData({
         websiteName: settings.websiteName || "",
@@ -82,7 +82,7 @@ export default function SettingsPage() {
         },
       });
     }
-  });
+  }, [settings]);
 
   const getImagePreviewUrl = (field: "logo" | "favicon") => {
     if (formData[field]) {

@@ -30,13 +30,13 @@ const SkillBar = ({ percent }: { percent: number }) => {
   );
 };
 
-export function SkillsSection() {
+export function SkillsSection({ id }: { id?: string }){
   const { data: skills = [], isLoading } = useGetSkillsQuery();
 
   if (isLoading) return <PageLoader />;
 
   const categories = [
-    'frontend', 'frontend-libraries', 'backend', 'database', 'tools', 'deployment', 'design'
+    'frontend', 'frontend-libraries', 'backend', 'database', 'tools', 'deployment', 'designing', 'social-media-marketing'
   ];
   
   const getCategorySkills = (category: string) => 
@@ -50,7 +50,8 @@ export function SkillsSection() {
       database: 'Database',
       tools: 'Tools',
       deployment: 'Deployment',
-      design: 'Design',
+      designing: 'Designing',
+      'social-media-marketing': 'Social Media Marketing',
     };
     return titles[category] || category;
   };
@@ -62,6 +63,7 @@ export function SkillsSection() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
       className="py-10"
+      id={id}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

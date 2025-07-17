@@ -7,7 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { MapPin } from 'lucide-react';
 import { motion } from "framer-motion";
 
-export function ExperienceSection() {
+export function ExperienceSection({ id }: { id?: string })  {
   const { data: experiences = [], isLoading } = useGetExperienceQuery();
 
   if (isLoading) return <PageLoader />;
@@ -20,6 +20,7 @@ export function ExperienceSection() {
       viewport={{ once: true }}
       style={{ perspective: 1000 }}
       className="your-section-classes"
+      id={id}
     >
       <div className="max-w-7xl mx-auto pb-10 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
